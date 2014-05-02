@@ -1,3 +1,31 @@
+# Bewd
+
+## Local Setup
+
+    $ git clone git@github.com:jshawl/bewd.git
+    $ cd bewd
+    $ jekyll serve --watch
+    $ open http://localhost:4000/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ![BEWD 1.0.2](assets/instructor_bewd_logo.png)
 

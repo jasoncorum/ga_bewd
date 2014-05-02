@@ -1,0 +1,14 @@
+---
+layout: default
+title: Home
+---
+
+Slides:
+
+<ul>
+{% for post in site.posts %}
+  {% unless post.exclude %}
+  <li><a href='{{ post.url }}'>{{ post.title }}</a></li>
+  {% endunless %}
+{% endfor %}
+</ul>

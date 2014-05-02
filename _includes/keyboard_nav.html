@@ -1,0 +1,18 @@
+<script>
+    var _keyStack = [];
+    function emptyKeyStack() {
+        _keyStack = [];
+    }
+    document.addEventListener('keydown', function(evt){
+        _keyStack.push(evt.keyCode);
+        switch(true) {
+            case _keyStack.slice(-4).join('') == '72797769':
+                return location.href = '/';
+            break;
+            case _keyStack.slice(-5).join('') == '7879846983':
+                return location.href = '/0001/01/01/notes.html';
+            break;
+        }
+        setTimeout(emptyKeyStack, 4000);
+    });
+</script>

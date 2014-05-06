@@ -10,6 +10,9 @@ title: bewd
     <li><span>{{ post.date | date_to_string }}</span> &raquo; {{ post.title }}
     <ul>
       <li><a href="{{ post.url }}">Slides</a></li>
+      {% if post.readme %}
+      <li><a href='{{ post.readme }}'>Readme</a></li> 
+      {% endif %}
     </ul>
     </li>
     {% endfor %}

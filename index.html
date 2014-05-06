@@ -1,14 +1,17 @@
 ---
 layout: default
-title: Home
+title: Your New Jekyll Site
 ---
 
-Slides:
-
-<ul>
-{% for post in site.posts %}
-  {% unless post.exclude %}
-  <li><a href='{{ post.url }}'>{{ post.title }}</a></li>
-  {% endunless %}
-{% endfor %}
-</ul>
+<div id="home">
+  <h1>Schedule</h1>
+  <ul class="posts">
+    {% for post in site.posts %}
+    <li><span>{{ post.date | date_to_string }}</span> &raquo; {{ post.title }}
+    <ul>
+      <li><a href="{{ post.url }}">Slides</a></li>
+    </ul>
+    </li>
+    {% endfor %}
+  </ul>
+</div>

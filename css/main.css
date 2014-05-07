@@ -179,3 +179,16 @@ h1:not(:first-of-type){
 p{
   margin:0;
 }
+
+[class^=icon]{
+  background:#eee;
+  color:#000 !important;
+  font-size:1.75em;
+  border-radius:100%;
+  padding:.5em;
+  margin:.5em .5em .5em 0;
+  box-sizing:border-box;
+  display:inline-block;
+  text-decoration:none;
+}
+

@@ -137,12 +137,17 @@ a:visited { color: #a0a; }
   padding: 0 .4em;
 }
 
-.posts ul{
+ul{
   margin-left:2em;
+  margin-top:1em;
 }
 
-.post ul, .post ol {
+.posts{
+  margin-left:0;
+}
+.posts ul, .post ol {
   margin-left: 1.35em;
+  margin-top:0;
 }
 
 

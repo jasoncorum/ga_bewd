@@ -6,7 +6,10 @@ title: bewd
 <div id="home">
   <h1>Schedule</h1>
   <ul class="posts">
+
     {% for post in site.posts %}
+    {% unless post.exclude %}
+
     <li><span>{{ post.date | date_to_string }}</span> &raquo; {{ post.title }}
     <ul>
       <li><a href="{{ post.url }}">Slides</a></li>
@@ -15,6 +18,9 @@ title: bewd
       {% endif %}
     </ul>
     </li>
+
+    {% endunless %}
     {% endfor %}
+  
   </ul>
 </div>

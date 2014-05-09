@@ -2,8 +2,9 @@
 
 ## Local Setup
 
-    $ git clone git@github.com:jshawl/bewd.git
-    $ cd bewd
+    $ git clone https://github.com/ga-students/BEWD_DC_1
+    $ cd BEWD_DC_1
+    $ gem install jekyll # installs jekyll - http://jekyllrb.com/
     $ jekyll serve --watch
     $ open http://localhost:4000/
 

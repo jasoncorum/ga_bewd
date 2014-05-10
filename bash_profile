@@ -3,16 +3,16 @@
 ## How to Setup
 
 # 1) Make sure you have the latest changes
-#     $ git pul
+#     $ git pull git@github.com:ga-students/BEWD_DC_1.git master
+# 2) Make a backup of your old bash profile
+#    $ mv ~/.bash_profile ~/.bash_profile_original
+# 3) Link to the new one
+#    $ ln -s /path/to/your/bewd/repo/bash_profile ~/.bash_profile
+# 4) Source it
+#    $ source ~/.bash_profile
 
-
-
-
-
-
-
-
-#  by Mike Stewart - http://MediaDoneRight.com
+#  Original config by Mike Stewart - http://MediaDoneRight.com
+#  Customization by Ken Croken
 
 #  SETUP CONSTANTS
 #  Bunch-o-predefined colors.  Makes reading code easier than escape sequences.

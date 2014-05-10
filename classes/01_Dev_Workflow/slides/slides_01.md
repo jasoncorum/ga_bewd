@@ -192,6 +192,6 @@ For Linux:
 ## Homework
 
 *	Review command line and GitHub.
-*	Read chapters 2 - 5 of Learn to Program (it's only 20pages with a lot of coding examples)
+*	Read chapters 2 - 5 of [Learn to Program](http://bewd.us/links/Learn_To_Program.pdf) (it's only 20pages with a lot of coding examples)
 
 ---

@@ -3,7 +3,7 @@
 ## How to Setup
 
 # 1) Make sure you have the latest changes
-#     $ git pull git@github.com:ga-students/BEWD_DC_1.git master
+#     $ git pull https://github.com/ga-students/BEWD_DC_1.git master
 # 2) Make a backup of your old bash profile
 #    $ mv ~/.bash_profile ~/.bash_profile_original
 # 3) Link to the new one

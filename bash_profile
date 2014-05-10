@@ -12,7 +12,7 @@
 #    $ source ~/.bash_profile
 
 #  Original config by Mike Stewart - http://MediaDoneRight.com
-#  Customization by Ken Croken
+#  Customization by Ken Crocken
 
 #  SETUP CONSTANTS
 #  Bunch-o-predefined colors.  Makes reading code easier than escape sequences.

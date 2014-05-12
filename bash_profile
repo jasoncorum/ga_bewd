@@ -1,4 +1,17 @@
 #  Customize BASH PS1 prompt to show current GIT repository and branch.
+
+## How to Setup
+
+# 1) Make sure you have the latest changes
+#     $ git pull https://github.com/ga-students/BEWD_DC_1.git master
+# 2) Make a backup of your old bash profile
+#    $ mv ~/.bash_profile ~/.bash_profile_original
+# 3) Link to the new one
+#    $ ln -s /path/to/your/bewd/repo/bash_profile ~/.bash_profile
+# 4) Source it
+#    $ source ~/.bash_profile
+
+#  Customize BASH PS1 prompt to show current GIT repository and branch.
 #  by Mike Stewart - http://MediaDoneRight.com
 
 #  SETUP CONSTANTS

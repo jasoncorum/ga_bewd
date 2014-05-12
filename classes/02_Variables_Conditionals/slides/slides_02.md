@@ -2,7 +2,7 @@
 
 #BEWD - Variables and Conditional Logic
 
-###Instructor Name
+###[Corey](http://twitter.com/cdspeis)
 
 ---
 
@@ -39,7 +39,7 @@
 *	An open source programming language
 *	Easy to read and natural to write
 *	Created by Yukihiro Matsumoto (aka Matz) with the goal of building a language FOR developers
-*	Regularly maintained and evolved (recently reached version 2.0.0)
+*	Regularly maintained and evolved (recently reached version 2.1.1)
 
 <div style="text-align:center;">
   <img src="../../assets/ruby/ruby_img.png" />
@@ -75,24 +75,19 @@
 ##Computational Thinking
 ###What does it mean to program?
 
-"Learning about “for” loops is not learning to program, any more than learning about pencils is learning to draw."
+The ability to break larger problems into smaller problems and breaking those smaller problems into even smaller problems until there is a solution in which your computer can comprehend
 
- –Bret Victor, Learnable Programming
+--
+###I WILL TALK ABOUT DEVELOPING A PROBLEM SOLVING APPROACH UNTIL I AM BLUE IN THE FACE!!
+
+--
+###... AND SIMPLICITY
 
 ---
 
 ![GeneralAssemb.ly](http://studio.generalassemb.ly/GA_Slide_Assets/Code_along_icon_md.png)
-##Robot
+##Change Maker
 
-
----
-
-##Robot Recap
-###Its about changing how you think
-*	Think in logical steps to solve a problem
-*	Use Ruby keywords to help solve those problems
-	*	Conditional Logic
-	*	Iteration
 	
 ---
 
@@ -116,7 +111,7 @@
 * The action of getting the value from a variable is called **accessing** the variable
 * We will use all the above techniques to store values into variables, and generate new values using existing variables
 
----
+--
 
 
 ##Variables
@@ -126,7 +121,7 @@
 	 => "Steven"
 	>> age = 2013 - 1983
 	 => age # 30
----
+--
 
 ##Data Types
 
@@ -147,7 +142,12 @@
 Let's learn how to assign and access simple integer and string variables
 
 ---
+##Math in Ruby
+###Ruby Arithmetic Operators
 
+![Ruby Arithmetic](../../assets/ruby/ruby_arithmetic.jpg)
+
+---
 
 ##Saving Code
 ###Using Methods
@@ -157,22 +157,14 @@ Let's learn how to assign and access simple integer and string variables
 * In other words, we can train the program to 'remember' a set of commands, and give that set of tasks a command name
 * Then, we can call that command by name and the program will perform those tasks
 
----
-
-##Math in Ruby
-###Ruby Arithmetic Operators
-
-![Ruby Arithmetic](../../assets/ruby/ruby_arithmetic.jpg)
-
----
-
+--
 
 ![GeneralAssemb.ly](http://studio.generalassemb.ly/GA_Slide_Assets/Code_along_icon_md.png)
 ##Methods
 
 Let's learn how to call simple methods, and how to declare our own methods.
 
----
+--
 
 ##Methods
 ###Recap
@@ -190,6 +182,8 @@ Let's learn how to call simple methods, and how to declare our own methods.
 
 Teddit is a news aggregator we will build during this course.
 
+[Starter Code](/classes/02_Variables_Conditionals/code_along/teddit.rb)
+
 ---
 
 
@@ -200,7 +194,7 @@ Teddit is a news aggregator we will build during this course.
 * A boolean is a simple value that is either ```true``` or ```false```
 * When different data types are compared to each other, the result of that comparison is a boolean result (e.g. 5 < 7 => true)
 
----
+--
 
 
 ##Boolean
@@ -210,11 +204,11 @@ Teddit is a news aggregator we will build during this course.
 ![](../../assets/ruby/logic_operators.png)
 
 
----
+--
 
 ![GeneralAssemb.ly](http://studio.generalassemb.ly/GA_Slide_Assets/Code_along_icon_md.png)
 ##Booleans
-
+[Starter Code](/classes/02_Variables_Conditionals/code_along/booleans.rb)
 ---
 
 
@@ -287,5 +281,3 @@ Let's see a demo of Secret Number
 *	HW 1 - Secret Number
 	*	Secret number is a game we will incrementally build for homework during the Ruby portion of the course. 
 		Players must guess a secret number and your program will provide feedback. 
----
-

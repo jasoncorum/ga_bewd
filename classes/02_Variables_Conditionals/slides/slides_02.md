@@ -182,7 +182,7 @@ Let's learn how to call simple methods, and how to declare our own methods.
 
 Teddit is a news aggregator we will build during this course.
 
-[Starter Code](/classes/02_Variables_Conditionals/code_along/teddit.rb)
+
 
 ---
 
@@ -208,7 +208,6 @@ Teddit is a news aggregator we will build during this course.
 
 ![GeneralAssemb.ly](http://studio.generalassemb.ly/GA_Slide_Assets/Code_along_icon_md.png)
 ##Booleans
-[Starter Code](/classes/02_Variables_Conditionals/code_along/booleans.rb)
 ---
 
 
@@ -248,7 +247,7 @@ you are an adult
 ###Multiple Conditions
 
 
-	guess = 7 
+	guess = 5 
 	if guess > 5
 		puts "Too high!"
 	elseif guess < 5
@@ -281,3 +280,4 @@ Let's see a demo of Secret Number
 *	HW 1 - Secret Number
 	*	Secret number is a game we will incrementally build for homework during the Ruby portion of the course. 
 		Players must guess a secret number and your program will provide feedback. 
+`Homework/Ruby/

@@ -19,6 +19,11 @@
 #  I don't remember where I found this.  o_O
 # --- I changed the format of the variables to allow for use in 
 # --- the color_branch function. (KEC)
+# --- adjusted the PS1 for line wrap issues, for whatever reason having 
+# --- the \[....\] in the variables didn't escape correctly.  I took the \[..\] out of 
+# --- the variables, but that caused some issues with the line wrap, adding the \[...\] 
+# --- (see the prompt below) around the variables seems to solve the problem.
+# --- see, http://stackoverflow.com/questions/706750/why-is-this-bash-prompt-acting-strangely-disappearing-and-how-do-i-fix-it-os-x
 
 # Reset
 Color_Off="\033[0m"       # Text Reset
@@ -128,7 +133,7 @@ function parse_git_branch() {
 }
 
 # --- prompt
-export PS1="$IBlack$date @ $time12a $newLine$ICyan\u $Yellow$pathFull$IWhite\$(parse_git_branch)$IWhite $ "
+export PS1="\[$IBlack\]$date @ $time12a $newLine\[$ICyan\]\u \[$Yellow\]$pathFull\[$IWhite\]\$(parse_git_branch)\[$IWhite\] $ "
 # --- sets colors for background
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad

@@ -280,4 +280,5 @@ Let's see a demo of Secret Number
 *	HW 1 - Secret Number
 	*	Secret number is a game we will incrementally build for homework during the Ruby portion of the course. 
 		Players must guess a secret number and your program will provide feedback. 
-`Homework/Ruby/
+
+`Homework/Ruby/Secret_Number/secret_number.rb`

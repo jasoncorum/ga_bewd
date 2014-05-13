@@ -2,26 +2,17 @@
 
 #BEWD - Working Like A Developer
 
-###Instructor Name
-
-Instructors current role.
+###[Corey](http://twitter.com/cdspeis)
 
 ---
 
 
 ##Agenda
 
-*	Intros
+* Make sure everyone is working
 *	What is Web Development?
 *	Bash Commands
 *	Using GitHub
-
----
-
-
-##Introductions
-
-Your course producer can help you with this.
 
 ---
 
@@ -36,19 +27,15 @@ During this course we will learn (at a high level):
 * Rails web application framework
 * (Basic) Database Modeling
 
-
-To pass the course you will need to:
-* Complete at least 80% of all assigned homework
-* Complete a final project
-
 ---
 
 ##Course Administration
 
 *	What you will get from us
-	* 	In class labs
+	* 	In class labs/code alongs
 	* 	Homework
-	* 	Slides / student handouts available in GitHub
+  *   Slides via [bewd.us](http://bewd.us)
+	* 	Student handouts available in GitHub
 	* 	Instructor & TAs!
 
 ---
@@ -102,12 +89,13 @@ For Macs:
 * For a better experience, download and install "iTerm 2", which is a replacement app that is slightly better.
 
 
-For Windows:
+For Linux:
 
-* Open the "Command Prompt" application
-* For a better experience, try "Console" (http://sourceforge.net/projects/console/)
+* Open the "Terminal" application
 
----
+*(if it's not called terminal then it is called prompt and I'm sorry)* 
+
+--
 
 ##The Command Line
 ###Why are we using it?
@@ -119,18 +107,18 @@ For Windows:
 	* ```ruby file.rb``` (this would run a Ruby file named file.rb)
 * This is the basis of how we will be writing and testing our Ruby applications in the initial portion of this course
 
----
+--
 
 
 
 ![GeneralAssemb.ly](../../assets/ICL_icons/Code_along_icon_md.png)
 ##Command Line Basics
-
----
+[The Very Basics](https://gist.github.com/Cspeisman/387c446d842701398fc1)
+--
 
 
 ![GeneralAssemb.ly](../../assets/ICL_icons/Exercise_icon_md.png)
-##Command Line Basics Exercise
+##[Command Line Basics Exercise](https://gist.github.com/Cspeisman/0994aef6292ac6bb008a)
 
 ---
 
@@ -174,7 +162,7 @@ For Windows:
 ###What is a GitHub fork?
 
 * As you work on projects in this class, we want you to use GitHub.
-* To gain easy access to all the class files, you will check out the class GitHub repository on your machine.
+* To gain easy access to all the class files
 * In order to ensure that changes you make for your projects do not mix with other students work, you will create a *fork* of the class GitHub repository.
 * You will then make changes to your fork, and occasionally pull down changes from the origin class repository.
 
@@ -204,6 +192,6 @@ For Windows:
 ## Homework
 
 *	Review command line and GitHub.
-*	Create your first blog entry.
+*	Read chapters 2 - 5 of [Learn to Program](http://bewd.us/links/Learn_To_Program.pdf) (it's only 20pages with a lot of coding examples)
 
 ---

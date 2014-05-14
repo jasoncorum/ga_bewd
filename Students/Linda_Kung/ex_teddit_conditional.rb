@@ -47,19 +47,34 @@ end
 def food_upvote?(topic)
 	topic == "food"
 end
-puts calculate_upvotes('some story', 'cats') == 5
-puts calculate_upvotes('some story', 'bacon') == 8
-puts calculate_upvotes('some story', 'food') == 3
+# puts calculate_upvotes('some story', 'cats') == 5
+# puts calculate_upvotes('some story', 'bacon') == 8
+# puts calculate_upvotes('some story', 'food') == 3
 
 
 # p food_upvote?('food')
 # p food_upvote?('trash')
 
 
-# puts "Welcome to Teddit! a text based news aggregator. Get today's news tomorrow!"
-# puts "Please enter a News story:"
-# story = get_input
-# puts "Please give it a category:"
-# category = get_input
-# upvotes = calculate_upvotes(story, category)
-# puts "New story added! #{story}, Category: #{category.capitalize}, Current Upvotes: #{upvotes}"
+puts "Welcome to Teddit! a text based news aggregator. Get today's news tomorrow!"
+puts "Please enter a News story:"
+story = get_input
+puts "Please give it a category:"
+category = get_input
+upvotes = calculate_upvotes(story, category)
+puts "New story added! #{story}, Category: #{category.capitalize}, Current Upvotes: #{upvotes}"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+s

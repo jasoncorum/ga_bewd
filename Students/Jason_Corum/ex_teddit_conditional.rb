@@ -8,8 +8,6 @@ def get_input
   #Get input from the user.
   gets.chomp
 end
-	
-	upvotes = 1
 
 def calculate_upvotes(story, category)
 	# Write code so that:
@@ -21,13 +19,13 @@ def calculate_upvotes(story, category)
 
 	if story.include?("cats") || category.include?("cats")
 		upvotes * 5
-	
+
 	elsif story.include?("bacon") || category.include?("bacon")
 		upvotes * 8
 	
 	elsif story.include?("food") || category.include?("food")
 	 	upvotes * 3
-	
+
 	else upvotes
 	end	
 

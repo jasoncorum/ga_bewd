@@ -36,3 +36,25 @@
 #
 ###############################################################################
 
+secret_number = 8
+
+puts "Welcome to the Secret Number Game! I am your host, Macbook. This game was created by my owner, Jason."
+
+puts "Who do we have playing the game today?"
+
+player = gets.chomp
+
+puts "Hi #{player}!"
+
+puts "In the Secret Number Game the player has 3 tries to guess a number between 1 and 10."
+
+puts "If you, #{player}, guess our predetermined number, you win!"
+
+puts "What do you think our secret number is today, #{player}?"
+
+guess_1 = gets.chomp
+
+if guess_1 = secret_number
+	puts "Congratulations #{player} you guessed the secret number!"
+
+end

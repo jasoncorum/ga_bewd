@@ -36,9 +36,19 @@
 #
 ###############################################################################
 
-secret_number = 8
+secret_number = 8.to_s
 
-puts "Welcome to the Secret Number Game! I am your host, Macbook. This game was created by my owner, Jason."
+def num_count(num)
+	if num == 1
+		"#{num} guess"
+	else
+		"#{num} guesses"
+	end
+end
+
+puts "Welcome to the Secret Number Game! I am your host, Macbook."
+
+puts "This game was created by my owner, Jason."
 
 puts "Who do we have playing the game today?"
 
@@ -46,15 +56,30 @@ player = gets.chomp
 
 puts "Hi #{player}!"
 
-puts "In the Secret Number Game the player has 3 tries to guess a number between 1 and 10."
+puts "In the Secret Number Game, you have 3 tries to guess a number between 1 and 10."
 
-puts "If you, #{player}, guess our predetermined number, you win!"
+puts "If you guess our predetermined number, you win!"
 
-puts "What do you think our secret number is today, #{player}?"
+3.downto(1) do |num|
+	
+	puts "You have #{num_count(num)} before the game is over."
+	puts "What is your guess for our secret number, #{player}?"
+	guess = gets.chomp
 
-guess_1 = gets.chomp
-
-if guess_1 = secret_number
-	puts "Congratulations #{player} you guessed the secret number!"
-
+	if guess < secret_number
+		puts "I'm sorry, that number is incorrect."
+		puts "Your guess is smaller than the secret number."
+		if num == 1
+			puts "I'm sorry. You lost the Secret Number Game. Bye."	
+		end
+	elsif guess > secret_number
+		puts "I'm sorry, that number is incorrect."
+		puts "Your guess is higher than the secret number."
+		if num == 1
+		puts "I'm sorry. You lost the Secret Number Game. Bye."	
+		end	
+	else
+		puts "Congratulations! You won the Secret Number Game!"
+		break if guess == secret_number
+	end
 end

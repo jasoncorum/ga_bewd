@@ -13,14 +13,11 @@ title: bewd
     <li><span>{{ post.date | date_to_string }}</span> &raquo; {{ post.title }}
     <ul>
       <li><a href="{{ post.url }}">Slides</a></li>
-
-      {% if post.homework %}
-      <li><a href='{{ post.homework }}'>Homework</a></li> 
-      {% endif %}
-
-      {% if post.readme %}
-      <li><a href='{{ post.readme }}'>Readme</a></li> 
-      {% endif %}
+      {% for link_hash in post.links %}
+        {% for link in link_hash %}
+	  <li><a href="{{ link[1] }}">{{ link[0] }}</a></li>
+	{% endfor %}
+      {% endfor %}
     </ul>
     </li>
 

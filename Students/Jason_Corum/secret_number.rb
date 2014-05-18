@@ -50,33 +50,31 @@ puts "Welcome to the Secret Number Game! I am your host, Macbook."
 
 puts "This game was created by my owner, Jason."
 
-puts "Who do we have playing the game today?"
+puts "What is your name?"
 
 player = gets.chomp
 
 puts "Hi #{player}!"
 
-puts "In the Secret Number Game, you have 3 tries to guess a number between 1 and 10."
-
-puts "If you guess our predetermined number, you win!"
+puts "In the Secret Number Game, you guess a number between 1 and 10 and, if you pick the right number, you win!"
 
 3.downto(1) do |num|
 	
 	puts "You have #{num_count(num)} before the game is over."
-	puts "What is your guess for our secret number, #{player}?"
+	puts "What is your guess, #{player}?"
 	guess = gets.chomp
 
 	if guess < secret_number
 		puts "I'm sorry, that number is incorrect."
-		puts "Your guess is smaller than the secret number."
+		puts "#{guess} is smaller than the secret number."
 		if num == 1
 			puts "I'm sorry. You lost the Secret Number Game. Bye."	
 		end
 	elsif guess > secret_number
 		puts "I'm sorry, that number is incorrect."
-		puts "Your guess is higher than the secret number."
+		puts "#{guess} is higher than the secret number."
 		if num == 1
-		puts "I'm sorry. You lost the Secret Number Game. Bye."	
+		puts "You're out of guesses, so you lost the Secret Number Game. Bye."	
 		end	
 	else
 		puts "Congratulations! You won the Secret Number Game!"

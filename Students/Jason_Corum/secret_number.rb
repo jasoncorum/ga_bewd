@@ -36,7 +36,11 @@
 #
 ###############################################################################
 
+# The variable below defines the secret number.
+
 secret_number = 8.to_s
+
+# The method below is used to address the grammar in the game so that we have "3 guesses" but "one guess".
 
 def num_count(num)
 	if num == 1
@@ -45,6 +49,8 @@ def num_count(num)
 		"#{num} guesses"
 	end
 end
+
+# These lines below are the introduction to the game.
 
 puts "Welcome to the Secret Number Game! I am your host, Macbook."
 
@@ -57,6 +63,8 @@ player = gets.chomp
 puts "Hi #{player}!"
 
 puts "In the Secret Number Game, you guess a number between 1 and 10 and, if you pick the right number, you win!"
+
+# The game loop is below. It gives the player 3 guesses to guess the secret number and provides different responses for when the guess is higher or lower than the secret number. It also provides a unique response if the user guesses the secret number. 
 
 3.downto(1) do |num|
 	

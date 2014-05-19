@@ -72,20 +72,23 @@ puts "In the Secret Number Game, you guess a number between 1 and 10 and, if you
 	puts "What is your guess, #{player}?"
 	guess = gets.chomp
 
-	if guess < secret_number
+	if guess != secret_number
 		puts "I'm sorry, that number is incorrect."
-		puts "#{guess} is smaller than the secret number."
-		if num == 1
-			puts "I'm sorry. You lost the Secret Number Game. Bye."	
-		end
-	elsif guess > secret_number
-		puts "I'm sorry, that number is incorrect."
-		puts "#{guess} is higher than the secret number."
-		if num == 1
-		puts "You're out of guesses, so you lost the Secret Number Game. Bye."	
-		end	
-	else
+	end
+
+	if guess == secret_number
 		puts "Congratulations! You won the Secret Number Game!"
 		break if guess == secret_number
 	end
+
+	if guess < secret_number
+		puts "#{guess} is smaller than the secret number."
+
+	elsif guess > secret_number
+		puts "#{guess} is higher than the secret number."
+	end
+
+	if num == 1
+		puts "You're out of guesses, so you lost the Secret Number Game. Bye."	
+	end	
 end

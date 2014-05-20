@@ -1,5 +1,5 @@
 name: bewd
 title: bewd
 markdown: redcarpet
-pygments: true
+highlighter: true
 permalink: /:title/

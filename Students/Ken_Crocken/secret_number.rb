@@ -48,6 +48,7 @@ puts "Your goal is to guess the secret number within 3 guesses."
 puts "Simple, right?  Awesome! lets' play ... "
 puts
 
+
 # --- Set the variables, hard code the secret number and set the number of guesses
 # --- secret_number = 1 + rand(10) # --- generate a random number
 secret_number = 5 # Secret number is hard coded.
@@ -82,4 +83,5 @@ end
 
 # --- Thank the player for playing.
 puts "Thanks for playing!  Come again soon."
+
 

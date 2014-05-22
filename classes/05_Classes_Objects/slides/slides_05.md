@@ -2,7 +2,7 @@
 
 #BEWD - Classes and Objects
 
-###Instructor Name
+###Tedi
 
 ---
 
@@ -14,6 +14,19 @@
 
 ---
 
+##Scope
+###Born when a variable is declared.
+###Dies at the `end` of method or class.
+###But only if it's a local variable!
+
+	local_variable = "One fish"
+	@instance_variable = "Two fish"
+	@@class_variable = "Red fish"
+	$global_variable = "Blue fish"
+	
+More on these later.
+
+---
 
 ##From Hashes to Classes
 ###Hashes pros and cons
@@ -44,17 +57,15 @@ What are some pros and cons of using hashes?
 
 *	Adding variables to a class
 
-		# Hashes
+# Hashes
 		story = {}
 		story[:title] = "Sand angry with flip-flops"
 		story[:title] #=> Returns your value
-
 
 		# With an object
 		class Story
 			attr_accessor :title
 		end
-
 
 		story = Story.new
 		story.title = "Sand angry with flip-flops"
@@ -63,11 +74,9 @@ What are some pros and cons of using hashes?
 ---
 
 
-##Creating Objects
-###Recap
+##Creating Objects (Recap)
 
-*	Adding methods to our class
-
+### Adding methods to our class
 		class Story
 			attr_accessor :title, :category, :upvotes
 			def upvote!
@@ -82,6 +91,7 @@ What are some pros and cons of using hashes?
 
 		story.upvote!
 		story.upvotes #=> 2
+
 ---
 
 
@@ -91,12 +101,11 @@ What are some pros and cons of using hashes?
 ---
 
 
-##Apartment
-###Recap
+##Apartment (Recap)
 
-*	The initialize method is invoked when Apartment.new is called
-*	to_s method called automatically on objects interpolated in a string (e.g. with puts)
-*	to_s can be overridden:
+*  The initialize method is invoked when Apartment.new is called
+*  to_s method called automatically on objects interpolated in a string (e.g. with puts)
+*  to_s can be overridden:
 
 		class My_Class
 			def to_s
@@ -132,20 +141,16 @@ What are some pros and cons of using hashes?
 
 ##Classes & Objects
 ###Too many classes in one .rb file.
-
 	# blt.rb
 	class BLT
 		#…
 	end
-
 	class Bacon
 		#…
 	end
-
 	class Lettuce
 		#…
 	end
-
 	class Tomato
 		#…
 	end
@@ -206,7 +211,7 @@ __Create A Class__
   		#variables and method for this class.
 	end
 ```
-
+--
 __Creating Objects__
 
 ```ruby
@@ -230,17 +235,15 @@ __Creating Objects__
 
 >GA has a course on UXD
 
-
+--
 __Variable Scope__
 
+- *Local variable* **(@name)** Available in the same method
+- *Instance variable* **(name)** Unique value for each instance of a class available from any method in that class.
+- *Class variable* **(@@name)** Same shared value for all instances of a class, available from any method of that class.
+- *Global variable* **($name)** Same shared value for all code running within a single Ruby program.
 
-| Scope |Example| Explanation|
-| ------------- |:-------------|:-------------------|
-| Local      | @name | Available in the same method|
-| Instance   | name | Unique value for each instance of a class available from any method in that class.|
-| Class   | @@name  | Same shared value for all instances of a class, available from any method of that class.|
-| Global   | $name  | Same shared value for all code running within a single Ruby program.|
-
+---
 
 ###Still Feel Lost?
 ####Catch Up With These Resources

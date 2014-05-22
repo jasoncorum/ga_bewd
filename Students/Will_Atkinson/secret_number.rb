@@ -36,52 +36,58 @@
 #
 ###############################################################################
 
-# --- Game intro, title and creator
-puts "Welcome to the Secret Number! by Ken Crocken"
-# --- Get the players name and tell them the rules
-puts "What's your name?"
+# welcome screen
+puts '+---------------------------------+'
+puts '|  Welcome to Secret Number v1.0  |'
+puts '|                                 |'
+puts '|                                 |'
+puts '|    Created by Will Atkinson     |'
+puts '|                                 |'
+puts '+---------------------------------+'
+puts ''
+
+# input name
+puts 'Please enter your name: '
 name = gets.chomp
-puts
-puts "Hi #{name}!  Let's go over the rules before we play."
-puts "I have chosen a secret number that is between 1 and 10."
-puts "Your goal is to guess the secret number within 3 guesses."
-puts "Simple, right?  Awesome! lets' play ... "
-puts
+puts ''
+puts 'Hello ' + name + '!'
+puts ''
+puts 'INSTRUCTIONS: 2 rules -' 
+puts '1. Guess a number between 1 and 10.'
+puts '2. You have three tries.'
 
+# generate a random number
+random_num = rand(10) + 1
 
-# --- Set the variables, hard code the secret number and set the number of guesses
-# --- secret_number = 1 + rand(10) # --- generate a random number
-secret_number = 5 # Secret number is hard coded.
+# i is the counter for guesses
+i = 3
 
-# --- Start the game, initiate the loop.  Once the player uses up 3 guesses
-# --- they lose and the game ends. 
-3.downto(1) do |guesses|
-
-# --- Display how many guesses are left and request the player to enter their guess.
-puts "Guesses left: #{guesses}"
-puts "What is your guess?"
-
-# --- Store the player's guess, convert player's number to an integer
-# --- and compare the player's guess to the secret number.
-  player_guess = gets.to_i
-
-    if player_guess == secret_number  # Player correctly guesses the secret number and wins!
-        puts "You win!  You guessed #{player_guess} and the Secret Number was #{secret_number}.  Well done!"
-        puts
-        break
-    elsif player_guess < secret_number && guesses > 1 # Player's guess is less than secret number, with hint
-        puts "You guessed #{player_guess}.  Guess higher!"
-        puts
-    elsif player_guess > secret_number && guesses > 1 # Player's guess is greater than secret numeber, with hint
-        puts "You guessed #{player_guess}.  Guess lower!"
-        puts
-    else # Player has run out of guessess and the game ends.
-        puts "Sorry, you are out of guesses.  You lose.  The Secret Number was #{secret_number}."
-        puts
-    end
+# loop that asks for three numbers and compares them against the random number
+while true && i > 0
+	puts ''
+		puts 'You only have ' + i.to_s + ' guesses left. Choose wisely.'
+		puts 'Guess a number: '
+		guess = gets.to_i
+		# when user guesses the correct number
+		if guess == random_num
+			puts ''
+			puts 'YOU WIN!!!! We\'d do a balloon drop but we\'re already over budget.'
+			puts ''
+			break
+		# user guesses a number lower than the random number
+		elsif guess < random_num
+			puts ''
+			puts 'TOO LOW!'
+		# user guesses a nnumber higher than the random number
+		elsif guess > random_num
+			puts ''
+			puts 'TOO HIGH!'
+		end
+		puts ''
+		i -= 1
 end
 
-# --- Thank the player for playing.
-puts "Thanks for playing!  Come again soon."
-
-
+# lost game message. only displayed if the user guess wrong 3 times
+if i == 0
+	puts 'YOU LOST! The correct number was ' + random_num.to_s + '. Better luck next time.'
+end

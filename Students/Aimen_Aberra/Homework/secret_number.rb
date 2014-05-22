@@ -36,52 +36,31 @@
 #
 ###############################################################################
 
-# --- Game intro, title and creator
-puts "Welcome to the Secret Number! by Ken Crocken"
-# --- Get the players name and tell them the rules
-puts "What's your name?"
+#Intro
+puts 'Welcome to the Secret Number game!!!'
+puts ''
+puts 'What is your name? '
 name = gets.chomp
-puts
-puts "Hi #{name}!  Let's go over the rules before we play."
-puts "I have chosen a secret number that is between 1 and 10."
-puts "Your goal is to guess the secret number within 3 guesses."
-puts "Simple, right?  Awesome! lets' play ... "
-puts
+puts "\nHi " + name + "!
+Lets go over the rules. 
+Guess a number between 1 and 10.
+You have 3 tries to find the number."
 
+secret_number = rand(10) + 1
 
-# --- Set the variables, hard code the secret number and set the number of guesses
-# --- secret_number = 1 + rand(10) # --- generate a random number
-secret_number = 5 # Secret number is hard coded.
-
-# --- Start the game, initiate the loop.  Once the player uses up 3 guesses
-# --- they lose and the game ends. 
-3.downto(1) do |guesses|
-
-# --- Display how many guesses are left and request the player to enter their guess.
-puts "Guesses left: #{guesses}"
-puts "What is your guess?"
-
-# --- Store the player's guess, convert player's number to an integer
-# --- and compare the player's guess to the secret number.
-  player_guess = gets.to_i
-
-    if player_guess == secret_number  # Player correctly guesses the secret number and wins!
-        puts "You win!  You guessed #{player_guess} and the Secret Number was #{secret_number}.  Well done!"
-        puts
-        break
-    elsif player_guess < secret_number && guesses > 1 # Player's guess is less than secret number, with hint
-        puts "You guessed #{player_guess}.  Guess higher!"
-        puts
-    elsif player_guess > secret_number && guesses > 1 # Player's guess is greater than secret numeber, with hint
-        puts "You guessed #{player_guess}.  Guess lower!"
-        puts
-    else # Player has run out of guessess and the game ends.
-        puts "Sorry, you are out of guesses.  You lose.  The Secret Number was #{secret_number}."
-        puts
-    end
+3.downto(1) do |guess|
+	puts "\nEnter guess: "
+	player_number = gets.chomp.to_i
+	if player_number == secret_number
+		puts "WINNER!!! Good Job " + name + " you guessed correct. "
+		break
+	elsif player_number > secret_number
+		puts "Too High!\nYou have #{guess-1} guesses left."
+	elsif player_number < secret_number
+		puts "Too Low!\nYou have #{guess-1} guesses left."
+	else
+		puts "Sorry " + name + " you have lost the game :("
+	end
 end
 
-# --- Thank the player for playing.
-puts "Thanks for playing!  Come again soon."
-
-
+puts "\nGAME OVER"

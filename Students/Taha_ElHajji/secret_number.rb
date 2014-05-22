@@ -36,52 +36,58 @@
 #
 ###############################################################################
 
-# --- Game intro, title and creator
-puts "Welcome to the Secret Number! by Ken Crocken"
-# --- Get the players name and tell them the rules
-puts "What's your name?"
-name = gets.chomp
-puts
-puts "Hi #{name}!  Let's go over the rules before we play."
-puts "I have chosen a secret number that is between 1 and 10."
-puts "Your goal is to guess the secret number within 3 guesses."
-puts "Simple, right?  Awesome! lets' play ... "
-puts
+# Welcoming and introducing the player to the game
+puts "This version of the Secret Number game was created by Taha El Hajji"
+puts "To start please enter your name"
 
+player_name=gets.chomp
 
-# --- Set the variables, hard code the secret number and set the number of guesses
-# --- secret_number = 1 + rand(10) # --- generate a random number
-secret_number = 5 # Secret number is hard coded.
+puts "Hi #{player_name}, welcome to Secret Number."
+puts "The rules of the game are simple: find the secret number in three guesses or less (hint: it's between 1 and 10)"
+puts "Let's start!"
 
-# --- Start the game, initiate the loop.  Once the player uses up 3 guesses
-# --- they lose and the game ends. 
-3.downto(1) do |guesses|
+#Prompts the player to play again, until they decide to stop by answering "no"
+player_answer = ""
 
-# --- Display how many guesses are left and request the player to enter their guess.
-puts "Guesses left: #{guesses}"
-puts "What is your guess?"
+until player_answer == "no"
+	#Assigns a secret number randomly so that even reading through the code does not help ;)
+	secret_number = rand(1..10)
 
-# --- Store the player's guess, convert player's number to an integer
-# --- and compare the player's guess to the secret number.
-  player_guess = gets.to_i
+	#Allows the player 3 guesses
+	3.times do |guesses|
 
-    if player_guess == secret_number  # Player correctly guesses the secret number and wins!
-        puts "You win!  You guessed #{player_guess} and the Secret Number was #{secret_number}.  Well done!"
-        puts
-        break
-    elsif player_guess < secret_number && guesses > 1 # Player's guess is less than secret number, with hint
-        puts "You guessed #{player_guess}.  Guess higher!"
-        puts
-    elsif player_guess > secret_number && guesses > 1 # Player's guess is greater than secret numeber, with hint
-        puts "You guessed #{player_guess}.  Guess lower!"
-        puts
-    else # Player has run out of guessess and the game ends.
-        puts "Sorry, you are out of guesses.  You lose.  The Secret Number was #{secret_number}."
-        puts
-    end
+		#Indicates which guess it is in letters
+		if guesses == 0
+			guesses_in_letters = "First"
+		elsif guesses == 1
+			guesses_in_letters = "Second"
+		else
+			guesses_in_letters = "Last"
+		end
+
+		#Informs player of how many guesses they have left and prompts for next answer
+		puts "What's your #{guesses_in_letters} of 3 guesses"
+		guess=gets.to_i
+
+		#Gives hints if answer is wrong, congratulates if answer is correct, and announces that game is over if player is out of guesses
+		if guess == secret_number
+			puts "Wow, you just got the secret_number. You would make a great spy! Apply here: https://www.cia.gov/careers/opportunities/clandestine/core-collector.html"
+			#if the player answers correctly, the game stops
+			break
+		#Provides hint if player is not out of guesses
+		elsif guess > secret_number && guesses < 2
+			puts "Nope, too high, try again!"			
+		elsif guesses < 2
+			puts "Nope, too low, try again!"
+		else
+			puts "Oops, game over!"
+			puts "The secret number was #{secret_number}"
+		end		
+	end
+
+	#Allows the player to exit or play again
+	puts "Do you want to play again? (Yes/No)"
+
+	#Downcases answer to avoid problems with capitalized letters
+	player_answer = gets.chomp.downcase
 end
-
-# --- Thank the player for playing.
-puts "Thanks for playing!  Come again soon."
-
-

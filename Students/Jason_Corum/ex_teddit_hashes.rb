@@ -21,6 +21,14 @@ def get_input
   gets.strip
 end
 
+# The "stories" array stores every story entered by the user.
+
+stories = []
+
+# Some alternate code for creating the "stories" array.
+
+# stories = Array.new
+
 # The method below calculates the number of "upvotes" a story on Teddit receives. It is set up so that stories about multiple topics get all the "upvotes they deserve. For example the story 'Cats Love Bacon' gets upvotes from both 'Cats' and 'Bacon'. 
 
 def calculate(story)
@@ -30,6 +38,9 @@ def calculate(story)
 		# If the Story is about Food it gets 3 times the upvotes.
 
 	story[:upvotes] = 1
+
+
+	# stories.each do | story_title, story_category |
 
 	if story[:title].downcase.include?("cats") || story[:category].downcase.include?("cats")
 		story[:upvotes] *= 5
@@ -43,7 +54,7 @@ def calculate(story)
 	 	story[:upvotes] *= 3
 	end
 
-	#For example:
+	# For example:
 	# "Cats frolic despite tuna shortage" should give you 5 times the upvotes!
 end
 
@@ -53,9 +64,13 @@ def show_story(story)
 	puts "New story added! #{story[:title]}, Category: #{story[:category]}, Current Upvotes: #{story[:upvotes]}"
 end
 
-# The "stories" array stores every story entered by the user.
+# The below method shows all stories.
 
-stories = []
+def show_all_stories(stories)
+	stories.each do |story|
+		puts "Story: #{story[:title]}, Category: #{story[:title]}, Upvotes: #{story[:upvotes]}"
+	end
+end
 
 # The section below is a loop that allows the user to enter a story in to Teddit. 
 
@@ -72,16 +87,44 @@ calculate(story)
 show_story(story)
 stories << story
 
+# Some alternate code for pushing "story" to "stories" array. 
+
+# stories.push story
+
 # The section below allows the user to enter multiple stories restarting the loop or close out the loop.
 
 puts "Would you like to add another story? Enter 'y' or 'n'."
-continue = get_input
+continue = get_input.downcase
 break if continue == "n"
 
 end
 
-# The section below prints out each story that gets added to the "stories" array.
+#The section below prints out each story that gets added to the "stories" array.
 
 puts "Here are the stories you entered today:"
-stories.each { |s| puts s }
 
+show_all_stories stories
+
+# Some alternate code for the Teddit loop.
+
+# answer = "yes"
+
+# while answer == "y"
+
+# 	puts "Please enter a News story:"
+# 	title = get_input
+# 	puts "Please give it a category:"
+# 	category = get_input
+
+# 	upvotes = calculate_upvotes(title, category)
+
+# 	show_story(story)
+	
+# 	puts "Would you like to add another story? Enter 'y' or 'n'."
+# 	answer = get_input.strip.downcase
+
+# 	if answer != 'y' || 'n'
+# 	puts "Please enter a valid response: 'y' or 'n'."
+# 	answer = get_input.strip.downcase		
+# 	end
+# end

@@ -22,10 +22,7 @@
 ###########
 ###########
 
-# upvotes = 4
-# title = "Man raised by wolverines, then eaten"
-# puts 'Welcome to Teddit! a text based news aggregator. Get today\'s news tomorrow!'
-# puts 'Story: ' + title + ' Current upvotes: ' + upvotes.to_s
+
 
 #Version 3 - Add data type casting (fix casting issue).
 ###########
@@ -37,24 +34,7 @@
 ###########
 ###########
 
-# upvotes = 4
-# title = "Man raised by wolverines, then eaten"
-# puts "Welcome to Teddit! a text based news aggregator. Get today\'s news tomorrow!"
-# puts "Story: #{title} Current upvotes: #{upvotes.to_s}"
+
 #Version 5 - Adding methods
 ###########
 ###########
-
-def greeting
-  puts "Welcome to Teddit! a text based news aggregator. Get today\'s news tomorrow!"
-end
-
-def new_article(title,upvotes)
-  puts "Story: #{title} Current upvotes: #{upvotes.to_s}"
-end
-
-greeting
-new_article("Man raised by wolverines, then eaten", 4)
-
-
-

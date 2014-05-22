@@ -7,14 +7,11 @@
 #1 - Let's say we wanted to perform the task of multiplying 22 by 44  
 ###########
 ###########
-#puts 22 * 44	
+	
 #2 - Great, what if we wanted to multiply 22*4 again. If we had to type that out each time, it would be inefficient
 # So, let's try and save that code to a method...
 ###########
 ###########
-# def multiply
-#   puts 22 * 44
-# end
 
 
 
@@ -24,9 +21,7 @@
 ##3 - Let's call that method, by simply typing out its name:
 ###########
 ###########
-# multiply
-# multiply
-# multiply
+
 
 
 ##4 - Now, let's say we wanted to make it a little smarter. Our  method will take two parameters passed to it.
@@ -34,19 +29,13 @@
 # and then multiply them together.
 ###########
 ###########
-# def multiply x, y
-#   puts x * y
-# end
-
 
 
 
 #5 - Now CALL that method:
 ###########
 ###########
-# multiply 22, 44
-# multiply(2, 35)
-# multiply(5, 5)
+
 
 
 #6 - Other People's methods. Two of the most common methods we will use throughout this class are puts and gets.
@@ -64,10 +53,7 @@
 #8 - Now, let's look at gets
 ###########
 ###########
-puts "Please enter a value."
-value = gets
 
-puts value
 
 #9 - So far, we have only been calling methods on their own
 # However, you can also call methods on STRINGS and INTEGERS! Crazy, huh? Let's try.

@@ -35,12 +35,9 @@
 # Remember to cast input from the Player into the appropriate data type.
 #
 ###############################################################################
-
-# The variable below defines the secret number.
-
-secret_number = 8.to_s
-
-# The method below is used to address the grammar in the game so that we have "3 guesses" but "one guess".
+def assert(truth)
+  raise "ERROR" if !truth
+end
 
 def num_count(num)
 	if num == 1
@@ -50,45 +47,29 @@ def num_count(num)
 	end
 end
 
-# These lines below are the introduction to the game.
+# The lines below are the introduction to the game.
 
 puts "Welcome to the Secret Number Game! I am your host, Macbook."
-
 puts "This game was created by my owner, Jason."
-
 puts "What is your name?"
-
-player = gets.chomp
-
+player = gets.strip
 puts "Hi #{player}!"
-
 puts "In the Secret Number Game, you guess a number between 1 and 10 and, if you pick the right number, you win!"
 
 # The game loop is below. It gives the player 3 guesses to guess the secret number and provides different responses for when the guess is higher or lower than the secret number. It also provides a unique response if the user guesses the secret number. 
 
 3.downto(1) do |num|
-	
-	puts "You have #{num_count(num)} before the game is over."
-	puts "What is your guess, #{player}?"
-	guess = gets.chomp
-
-	if guess != secret_number
-		puts "I'm sorry, that number is incorrect."
-	end
-
-	if guess == secret_number
-		puts "Congratulations! You won the Secret Number Game!"
-		break if guess == secret_number
-	end
-
-	if guess < secret_number
-		puts "#{guess} is smaller than the secret number."
-
-	elsif guess > secret_number
-		puts "#{guess} is higher than the secret number."
-	end
-
-	if num == 1
-		puts "You're out of guesses, so you lost the Secret Number Game. Bye."	
-	end	
+    puts "You have #{num_count(num)} before the game is over."
+    puts "What is your guess?"
+    number = gets.strip.to_i
+    puts 'Your number is lower than the secret number' if number < 3
+    puts 'You guessed the secret number! You win' if number == 3
+    puts 'Your number is higher than the secret number.' if number > 3  
+    break if number == 3
+    puts "You're out of guesses, so you lost the Secret Number Game. Bye." if num == 1
 end
+
+# assert secret_number(1)
+# assert secret_number(2)
+# assert secret_number(3)
+# assert secret_number(4)

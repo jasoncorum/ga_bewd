@@ -41,31 +41,29 @@ end
 # 6. Fill in the blank correctly for that scenario (or try again)
 # 7. Repeat until the script reaches the bottom and you see "YOU'RE DONE!"
 
-
-
-# Create an empty array named categories using a literal
-categories = ___
+# Create an empty array named categories with using a literal
+categories = []
 assert_equal categories, []
 
 # Create an empty array named categories using Array's #new method
-categories = ___
+categories = Array.new
 assert_equal categories, []
 
 # Add 3 stories to the categories array. Each time using a different method.
-categories.___("Music")
-categories.___("Weather")
-categories.___("Florida")
+categories.push("Music")
+categories.unshift("Weather")
+categories << "Florida"
 assert_equal ["Florida", "Music", "Weather"], categories.sort
 
 # Ensure only unique categories get stored
 categories << "Florida"
-categories.___!
+categories.uniq!
 assert_equal ["Florida", "Music", "Weather"], categories.sort
 
 # Write a conditional that adds "Family" to the category list if it includes both Animals, and Shopping
-categories << "Animals"
+categories.push "Animals" # add to it
 
-if ___
+if categories.include?("Animals") && categories.include?("Shopping")
   categories << "Family"
 end
 
@@ -74,46 +72,46 @@ assert_equal(false, categories.include?("Family"))
 categories << "Shopping"
 
 #repeat check here
-if ___
-  categories << "Family"
+if categories.include?("Animals") && categories.include?("Shopping")
+  categories << "Family" # add to it
 end
 
 assert_equal(true, categories.include?("Family"))
 
 # Print all of the Array elements as a comma separated string in alphabetical order
 # persist the sorting of categories
-assert_equal("Animals, Family, Florida, Music, Shopping, Weather", categories.___.___)
+assert_equal("Animals, Family, Florida, Music, Shopping, Weather", categories.sort!.join(", "))
 assert_equal(%w(Animals Family Florida Music Shopping Weather), categories)
 
 # Remove the first category from the array and print it to the screen "First Category: Category here"
-first_category = categories.___
+first_category = categories.shift
 assert_equal("First Category: Animals", "First Category: #{first_category}")
-assert_equal(5, categories.___) # get it's length
+assert_equal(5, categories.length) # get it's length
 
 # Remove the newest category from the array, print it to the screen "Last Category: Category here"
 
-last_category = categories.___
+last_category = categories.pop
 assert_equal("Last Category: Weather", "Last Category: #{last_category}")
-assert_equal(4, categories.___) # get it's length
+assert_equal(4, categories.length) # get it's length
 
 # Write a conditional that clears the array if there are more than 5 categories and adds "Misc" to it.
 
-if categories.___ > 5 #get it's length
-  categories.___ # empty the array
-  categories << "Misc"
+if categories.length > 5 #get it's length
+  categories.clear # empty the array
+  categories.push("Misc") # add to it
 end
 
-assert_equal(4, categories.___) # get it's length
+assert_equal(4, categories.size) # get it's length
 
-categories << "Medicine"
-categories << "Physics"
+categories.push("Medicine") # add to it
+categories.push("Physics") # add to it
 
-if categories.___ > 5 #get it's length
-  categories.___ # empty the array
-  categories << "Misc"
+if categories.size > 5 #get it's length
+  categories.clear # empty the array
+  categories.push("Misc") # add to it
 end
 
-assert_equal(1, categories.___) # get it's size
+assert_equal(1, categories.count) # get it's size
 assert_equal(["Misc"], categories)
 
 puts "YOU'RE DONE!"

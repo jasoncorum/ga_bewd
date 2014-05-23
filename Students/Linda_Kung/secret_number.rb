@@ -20,6 +20,76 @@
 #	  -	Ask for the player's name then personally greet them by printing to the screen, "Hi player_name!"
 #	  -	Any good game will communicate the rules. Let the player know they must guess a number between 1 and 10 
 #		and that they only have 3 tries to do so.
+
+# The Secret Number is 8
+# Input player's name
+
+#Set method to allow player to input name
+
+def input_name
+	name = gets.chomp
+end
+
+#Hard code the secret number
+def secret_number
+	number = '8'
+end
+
+#Method for player's first guess
+def number1(first_guess)
+	first_guess = gets.chomp
+
+	if first_guess == secret_number
+		puts "Nice job, #{first_guess} is correct. You win Secret Number!"
+	else 
+		puts "#{first_guess} is not correct. You have two guesses left. Try again!"
+		second_guess = number2(second_guess)
+	end
+
+end 
+
+
+#Method for player's second guess if applicable
+def number2(second_guess)
+	second_guess = gets.chomp
+
+	if second_guess == secret_number
+		puts "Yes, #{second_guess} is correct. You win Secret Number!"
+	else
+		puts "#{second_guess} is not correct either. You have one more guess."
+		last_guess = number3(last_guess)
+	end
+
+end 
+
+#Method for player's third guess if applicable
+def number3(last_guess)
+		last_guess = gets.chomp
+
+	if last_guess == secret_number
+		puts "Yup, #{last_guess} is the Secret Number. You win Secret Number!"
+	else 
+		puts "#{last_guess} is not correct. Sorry, you lose the game..the Secret Number was 8."
+	end
+
+end 
+
+puts "Welcome to Secret Number!"
+puts "What is your name?"
+name = input_name
+puts "Hi #{name}!"
+puts "#{name}, these are the rules of Secret Number:"
+puts "You have to guess the Secret Number."
+puts "You must guess a number between 1 and 10..."
+puts "but you only have 3 tries to do so."
+puts "Are you ready? Let's start:"
+puts "Take your first guess"
+first_guess = number1(first_guess) 
+
+
+
+
+
 #
 #	Functionality: 
 #	 -	Hard code the secret number. Make it a random number between 1 and 10.
@@ -28,48 +98,12 @@
 #	 -	If they guess incorrectly, give the player some direction. If they guess too high let them know, if they guess too low, let them know.
 #	 - 	Don't forget to let your players know how many guesses they have left. Your game should say something like
 #		  "You have X many guesses before the game is over enter a another number"
-#	 -	If they don't guess correctly after 3 tries, print that the Player lost and the game is over. Also let them know what the `secret_number` was.
+#	 -	If they don't guess correctly after 3 tries, print that the Player lost and the game is over. 
+#Also let them know what the `secret_number` was.
 #
 # Make sure to add helpful comments to your code to document what each section does.
 # 
 # Remember to cast input from the Player into the appropriate data type.
 #
 ###############################################################################
-def assert(truth)
-  raise "ERROR" if !truth
-end
 
-def num_count(num)
-	if num == 1
-		"#{num} guess"
-	else
-		"#{num} guesses"
-	end
-end
-
-# The lines below are the introduction to the game.
-
-puts "Welcome to the Secret Number Game! I am your host, Macbook."
-puts "This game was created by my owner, Jason."
-puts "What is your name?"
-player = gets.strip
-puts "Hi #{player}!"
-puts "In the Secret Number Game, you guess a number between 1 and 10 and, if you pick the right number, you win!"
-
-# The game loop is below. It gives the player 3 guesses to guess the secret number and provides different responses for when the guess is higher or lower than the secret number. It also provides a unique response if the user guesses the secret number. 
-
-3.downto(1) do |num|
-    puts "You have #{num_count(num)} before the game is over."
-    puts "What is your guess?"
-    number = gets.strip.to_i
-    puts 'Your number is lower than the secret number' if number < 3
-    puts 'You guessed the secret number! You win' if number == 3
-    puts 'Your number is higher than the secret number.' if number > 3  
-    break if number == 3
-    puts "You're out of guesses, so you lost the Secret Number Game. Bye." if num == 1
-end
-
-# assert secret_number(1)
-# assert secret_number(2)
-# assert secret_number(3)
-# assert secret_number(4)

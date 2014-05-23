@@ -35,41 +35,59 @@
 # Remember to cast input from the Player into the appropriate data type.
 #
 ###############################################################################
-def assert(truth)
-  raise "ERROR" if !truth
-end
 
-def num_count(num)
-	if num == 1
-		"#{num} guess"
-	else
-		"#{num} guesses"
+# Welcoming and introducing the player to the game
+puts "This version of the Secret Number game was created by Taha El Hajji"
+puts "To start please enter your name"
+
+player_name=gets.chomp
+
+puts "Hi #{player_name}, welcome to Secret Number."
+puts "The rules of the game are simple: find the secret number in three guesses or less (hint: it's between 1 and 10)"
+puts "Let's start!"
+
+#Prompts the player to play again, until they decide to stop by answering "no"
+player_answer = ""
+
+until player_answer == "no"
+	#Assigns a secret number randomly so that even reading through the code does not help ;)
+	secret_number = rand(1..10)
+
+	#Allows the player 3 guesses
+	3.times do |guesses|
+
+		#Indicates which guess it is in letters
+		if guesses == 0
+			guesses_in_letters = "First"
+		elsif guesses == 1
+			guesses_in_letters = "Second"
+		else
+			guesses_in_letters = "Last"
+		end
+
+		#Informs player of how many guesses they have left and prompts for next answer
+		puts "What's your #{guesses_in_letters} of 3 guesses"
+		guess=gets.to_i
+
+		#Gives hints if answer is wrong, congratulates if answer is correct, and announces that game is over if player is out of guesses
+		if guess == secret_number
+			puts "Wow, you just got the secret_number. You would make a great spy! Apply here: https://www.cia.gov/careers/opportunities/clandestine/core-collector.html"
+			#if the player answers correctly, the game stops
+			break
+		#Provides hint if player is not out of guesses
+		elsif guess > secret_number && guesses < 2
+			puts "Nope, too high, try again!"			
+		elsif guesses < 2
+			puts "Nope, too low, try again!"
+		else
+			puts "Oops, game over!"
+			puts "The secret number was #{secret_number}"
+		end		
 	end
+
+	#Allows the player to exit or play again
+	puts "Do you want to play again? (Yes/No)"
+
+	#Downcases answer to avoid problems with capitalized letters
+	player_answer = gets.chomp.downcase
 end
-
-# The lines below are the introduction to the game.
-
-puts "Welcome to the Secret Number Game! I am your host, Macbook."
-puts "This game was created by my owner, Jason."
-puts "What is your name?"
-player = gets.strip
-puts "Hi #{player}!"
-puts "In the Secret Number Game, you guess a number between 1 and 10 and, if you pick the right number, you win!"
-
-# The game loop is below. It gives the player 3 guesses to guess the secret number and provides different responses for when the guess is higher or lower than the secret number. It also provides a unique response if the user guesses the secret number. 
-
-3.downto(1) do |num|
-    puts "You have #{num_count(num)} before the game is over."
-    puts "What is your guess?"
-    number = gets.strip.to_i
-    puts 'Your number is lower than the secret number' if number < 3
-    puts 'You guessed the secret number! You win' if number == 3
-    puts 'Your number is higher than the secret number.' if number > 3  
-    break if number == 3
-    puts "You're out of guesses, so you lost the Secret Number Game. Bye." if num == 1
-end
-
-# assert secret_number(1)
-# assert secret_number(2)
-# assert secret_number(3)
-# assert secret_number(4)

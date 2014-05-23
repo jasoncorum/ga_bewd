@@ -35,41 +35,53 @@
 # Remember to cast input from the Player into the appropriate data type.
 #
 ###############################################################################
-def assert(truth)
-  raise "ERROR" if !truth
+
+# --- Game intro, title and creator
+puts "Welcome to the Secret Number! by Ken Crocken"
+# --- Get the players name and tell them the rules
+puts "What's your name?"
+name = gets.chomp
+puts
+puts "Hi #{name}!  Let's go over the rules before we play."
+puts "I have chosen a secret number that is between 1 and 10."
+puts "Your goal is to guess the secret number within 3 guesses."
+puts "Simple, right?  Awesome! lets' play ... "
+puts
+
+
+# --- Set the variables, hard code the secret number and set the number of guesses
+# --- secret_number = 1 + rand(10) # --- generate a random number
+secret_number = 5 # Secret number is hard coded.
+
+# --- Start the game, initiate the loop.  Once the player uses up 3 guesses
+# --- they lose and the game ends. 
+3.downto(1) do |guesses|
+
+# --- Display how many guesses are left and request the player to enter their guess.
+puts "Guesses left: #{guesses}"
+puts "What is your guess?"
+
+# --- Store the player's guess, convert player's number to an integer
+# --- and compare the player's guess to the secret number.
+  player_guess = gets.to_i
+
+    if player_guess == secret_number  # Player correctly guesses the secret number and wins!
+        puts "You win!  You guessed #{player_guess} and the Secret Number was #{secret_number}.  Well done!"
+        puts
+        break
+    elsif player_guess < secret_number && guesses > 1 # Player's guess is less than secret number, with hint
+        puts "You guessed #{player_guess}.  Guess higher!"
+        puts
+    elsif player_guess > secret_number && guesses > 1 # Player's guess is greater than secret numeber, with hint
+        puts "You guessed #{player_guess}.  Guess lower!"
+        puts
+    else # Player has run out of guessess and the game ends.
+        puts "Sorry, you are out of guesses.  You lose.  The Secret Number was #{secret_number}."
+        puts
+    end
 end
 
-def num_count(num)
-	if num == 1
-		"#{num} guess"
-	else
-		"#{num} guesses"
-	end
-end
+# --- Thank the player for playing.
+puts "Thanks for playing!  Come again soon."
 
-# The lines below are the introduction to the game.
 
-puts "Welcome to the Secret Number Game! I am your host, Macbook."
-puts "This game was created by my owner, Jason."
-puts "What is your name?"
-player = gets.strip
-puts "Hi #{player}!"
-puts "In the Secret Number Game, you guess a number between 1 and 10 and, if you pick the right number, you win!"
-
-# The game loop is below. It gives the player 3 guesses to guess the secret number and provides different responses for when the guess is higher or lower than the secret number. It also provides a unique response if the user guesses the secret number. 
-
-3.downto(1) do |num|
-    puts "You have #{num_count(num)} before the game is over."
-    puts "What is your guess?"
-    number = gets.strip.to_i
-    puts 'Your number is lower than the secret number' if number < 3
-    puts 'You guessed the secret number! You win' if number == 3
-    puts 'Your number is higher than the secret number.' if number > 3  
-    break if number == 3
-    puts "You're out of guesses, so you lost the Secret Number Game. Bye." if num == 1
-end
-
-# assert secret_number(1)
-# assert secret_number(2)
-# assert secret_number(3)
-# assert secret_number(4)

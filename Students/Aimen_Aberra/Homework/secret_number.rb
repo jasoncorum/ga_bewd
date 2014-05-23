@@ -35,41 +35,32 @@
 # Remember to cast input from the Player into the appropriate data type.
 #
 ###############################################################################
-def assert(truth)
-  raise "ERROR" if !truth
-end
 
-def num_count(num)
-	if num == 1
-		"#{num} guess"
+#Intro
+puts 'Welcome to the Secret Number game!!!'
+puts ''
+puts 'What is your name? '
+name = gets.chomp
+puts "\nHi " + name + "!
+Lets go over the rules. 
+Guess a number between 1 and 10.
+You have 3 tries to find the number."
+
+secret_number = rand(10) + 1
+
+3.downto(1) do |guess|
+	puts "\nEnter guess: "
+	player_number = gets.chomp.to_i
+	if player_number == secret_number
+		puts "WINNER!!! Good Job " + name + " you guessed correct. "
+		break
+	elsif player_number > secret_number
+		puts "Too High!\nYou have #{guess-1} guesses left."
+	elsif player_number < secret_number
+		puts "Too Low!\nYou have #{guess-1} guesses left."
 	else
-		"#{num} guesses"
+		puts "Sorry " + name + " you have lost the game :("
 	end
 end
 
-# The lines below are the introduction to the game.
-
-puts "Welcome to the Secret Number Game! I am your host, Macbook."
-puts "This game was created by my owner, Jason."
-puts "What is your name?"
-player = gets.strip
-puts "Hi #{player}!"
-puts "In the Secret Number Game, you guess a number between 1 and 10 and, if you pick the right number, you win!"
-
-# The game loop is below. It gives the player 3 guesses to guess the secret number and provides different responses for when the guess is higher or lower than the secret number. It also provides a unique response if the user guesses the secret number. 
-
-3.downto(1) do |num|
-    puts "You have #{num_count(num)} before the game is over."
-    puts "What is your guess?"
-    number = gets.strip.to_i
-    puts 'Your number is lower than the secret number' if number < 3
-    puts 'You guessed the secret number! You win' if number == 3
-    puts 'Your number is higher than the secret number.' if number > 3  
-    break if number == 3
-    puts "You're out of guesses, so you lost the Secret Number Game. Bye." if num == 1
-end
-
-# assert secret_number(1)
-# assert secret_number(2)
-# assert secret_number(3)
-# assert secret_number(4)
+puts "\nGAME OVER"

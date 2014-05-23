@@ -35,41 +35,58 @@
 # Remember to cast input from the Player into the appropriate data type.
 #
 ###############################################################################
-def assert(truth)
-  raise "ERROR" if !truth
+
+# hard coded number and hard coded tries
+number = 7
+tries = 1
+
+# welcome message
+
+puts "Welcome to the Secret Number game! This game was created by Alex K. What is your name?"
+player_name = gets.chomp
+
+# first guess
+
+puts "Hi #{player_name}! You will need to guess a number between 1 and 10. You will have three tries. What's your first guess?"
+guess = gets.chomp.to_i 
+
+# here I added the .to_i method as well, hoping I could remove it from the if/else conditionals for the guess variable, but I kept getting a comparison error if I tried to remove it below. Not sure why.  
+
+if guess.to_i == number.to_i
+	puts "Congratulations! You won."
 end
 
-def num_count(num)
-	if num == 1
-		"#{num} guess"
-	else
-		"#{num} guesses"
-	end
+# added a while loop
+
+while guess.to_i != number.to_i && tries < 3 # added the && operator for both conditions to be met
+	tries += 1 # added a counter for the tries within the while loop
+
+# added conditions for invalid guesses (0, greater than 10); had to get creative with the grammar because I couldn't figure out how to set conditions within conditions for plural ("guesses") vs. singular ("guess") dependent upon #{tries}
+
+if guess.to_i == 0
+	puts "Invalid guess. Try again. This is your #{tries} of 3 guesses." 
+	guess = gets.chomp
+elsif guess.to_i > 10
+	puts "Invalid guess. Try again. This is your #{tries} of 3 guesses."
+	guess = gets.chomp
+elsif guess.to_i > number.to_i 
+	puts "You guessed too high. Try again. This is your #{tries} of 3 guesses."
+	guess = gets.chomp
+elsif guess.to_i < number.to_i 
+	puts "You guessed too low. Try again. This is your #{tries} of 3 guesses."
+	guess = gets.chomp
 end
 
-# The lines below are the introduction to the game.
-
-puts "Welcome to the Secret Number Game! I am your host, Macbook."
-puts "This game was created by my owner, Jason."
-puts "What is your name?"
-player = gets.strip
-puts "Hi #{player}!"
-puts "In the Secret Number Game, you guess a number between 1 and 10 and, if you pick the right number, you win!"
-
-# The game loop is below. It gives the player 3 guesses to guess the secret number and provides different responses for when the guess is higher or lower than the secret number. It also provides a unique response if the user guesses the secret number. 
-
-3.downto(1) do |num|
-    puts "You have #{num_count(num)} before the game is over."
-    puts "What is your guess?"
-    number = gets.strip.to_i
-    puts 'Your number is lower than the secret number' if number < 3
-    puts 'You guessed the secret number! You win' if number == 3
-    puts 'Your number is higher than the secret number.' if number > 3  
-    break if number == 3
-    puts "You're out of guesses, so you lost the Secret Number Game. Bye." if num == 1
+if tries == 3 && guess.to_i != number.to_i # added the && operator for the final set of conditions
+	puts "You lost. The secret number was #{number}."
+elsif guess.to_i == number.to_i
+	puts "Congratulations! You won."
+end
 end
 
-# assert secret_number(1)
-# assert secret_number(2)
-# assert secret_number(3)
-# assert secret_number(4)
+
+
+
+
+
+

@@ -15,18 +15,18 @@ def fizzbuzz(number)
   number
 end
  
-# 1.upto(100) do |num|
-#   puts fizzbuzz(num)
-# end
+1.upto(100) do |num|
+  puts fizzbuzz(num)
+end
  
  
 def assert(truthy)
   raise "There was an error" if !truthy
 end
  
-assert fizzbuzz(1) == 1
-assert fizzbuzz(2) == 2
-assert fizzbuzz(3) == 'fizz'
+# assert fizzbuzz(1) == 1
+# assert fizzbuzz(2) == 2
+# assert fizzbuzz(3) == 'fizz'
 # assert fizzbuzz(4) == 4
 # assert fizzbuzz(5) == 'buzz'
 # assert fizzbuzz(9) == 'fizz'

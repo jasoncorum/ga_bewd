@@ -41,7 +41,6 @@ def calculate(story)
 
 
 	# stories.each do | story_title, story_category |
-
 	if story[:title].downcase.include?("cats") || story[:category].downcase.include?("cats")
 		story[:upvotes] *= 5
 	end
@@ -72,6 +71,10 @@ def show_all_stories(stories)
 	end
 end
 
+# The "stories" array stores every story entered by the user.
+
+stories = []
+
 # The section below is a loop that allows the user to enter a story in to Teddit. 
 
 loop do
@@ -95,6 +98,11 @@ stories << story
 
 puts "Would you like to add another story? Enter 'y' or 'n'."
 continue = get_input.downcase
+
+# The section below allows the user to enter multiple stories restarting the loop or close out the loop.
+
+puts "Would you like to add another story? Enter 'y' or 'n'."
+continue = get_input
 break if continue == "n"
 
 end
@@ -128,3 +136,10 @@ show_all_stories stories
 # 	answer = get_input.strip.downcase		
 # 	end
 # end
+=======
+# The section below prints out each story that gets added to the "stories" array.
+
+puts "Here are the stories you entered today:"
+stories.each { |s| puts s }
+
+>>>>>>> upstream/master

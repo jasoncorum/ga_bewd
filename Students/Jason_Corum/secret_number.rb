@@ -47,6 +47,8 @@ def num_count(num)
 	end
 end
 
+secret_number = 3
+
 # The lines below are the introduction to the game.
 
 puts "Welcome to the Secret Number Game! I am your host, Macbook."
@@ -62,10 +64,10 @@ puts "In the Secret Number Game, you guess a number between 1 and 10 and, if you
     puts "You have #{num_count(num)} before the game is over."
     puts "What is your guess?"
     number = gets.strip.to_i
-    puts 'Your number is lower than the secret number' if number < 3
-    puts 'You guessed the secret number! You win' if number == 3
-    puts 'Your number is higher than the secret number.' if number > 3  
-    break if number == 3
+    puts 'Your number is lower than the secret number' if number < secret_number
+    puts 'You guessed the secret number! You win' if number == secret_number
+    puts 'Your number is higher than the secret number.' if number > secret_number  
+    break if number == secret_number
     puts "You're out of guesses, so you lost the Secret Number Game. Bye." if num == 1
 end
 

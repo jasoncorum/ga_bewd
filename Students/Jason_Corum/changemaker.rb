@@ -8,17 +8,18 @@ def make_change
 change = gets.strip.to_i
 
 coins = {}
+money = { quarter: 25, dime: 10, nickel: 5, penny: 1 }
 
-coins[:quarter] = change / 25
-change = change % 25
+coins[:quarters] = change / money[:quarter]
+change = change % money[:quarter]
 
-coins[:dime] = change / 10
-change = change % 10
+coins[:dimes] = change / money[:dime]
+change = change % money[:dime]
 
-coins[:nickel] = change / 5
-coins[:penny] = change % 5
+coins[:nickels] = change / money[:nickel]
+coins[:pennies] = change % money[:nickel]
 
-puts "Quarters: #{coins[:quarter]}, Dimes: #{coins[:dime]}, Nickels: #{coins[:nickel]}, Pennies: #{coins[:penny]}"
+puts "Quarters: #{coins[:quarters]}, Dimes: #{coins[:dimes]}, Nickels: #{coins[:nickels]}, Pennies: #{coins[:pennies]}"
 
 end
 

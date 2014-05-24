@@ -1,4 +1,4 @@
-puts "Please enter the amount of change needed. If over 1.00 please enter the total amount in cents (ie. 1.24 = 124):"
+puts "Please enter the amount of change needed. If over 1.00 please enter the total amount in cents (ie. $1.05 = 105):"
 
 # def assert(truthy)
 #   raise "There was an error" if !truthy

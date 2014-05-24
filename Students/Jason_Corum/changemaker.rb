@@ -1,30 +1,25 @@
+puts "Please enter the amount of change needed. If over 1.00 please enter the total amount in cents (ie. 1.24 = 124):"
 
-def assert(truthy)
-  raise "There was an error" if !truthy
-end
+# def assert(truthy)
+#   raise "There was an error" if !truthy
+# end
 
-def show_change
-	change.each do
-		puts "Quarters: #{coins[:Quarter]}"
-	end
-end
+def make_change
+change = gets.strip.to_i
 
-change = []
 coins = {}
 
-# puts "Enter your change"
-# change = gets.to_i
+coins[:quarter] = change / 25
+change = change % 25
 
-# coins[:quarter] = change / 25
-# puts "#{coins[:quarter]}"
+coins[:dime] = change / 10
+change = change % 10
 
+coins[:nickel] = change / 5
+coins[:penny] = change % 5
 
+puts "Quarters: #{coins[:quarter]}, Dimes: #{coins[:dime]}, Nickels: #{coins[:nickel]}, Pennies: #{coins[:penny]}"
 
 end
 
-# change << coins
-
-# show_change change
-
-# assert fizzbuzz(1) == 1
-# assert fizzbuzz(2) == 2
+make_change

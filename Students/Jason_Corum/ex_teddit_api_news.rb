@@ -22,14 +22,21 @@ response['data']['children'].each do |story|
 
 	hash[:upvotes] = story['data']['ups']
 
-	hash[:categories].include?("cats") && hash[:categories].include("bacon") && hash[:categories].include("food") ? hash[:upvotes] *= 120 
-	: hash[:categories].include?("cats") && hash[:categories].include("bacon") ? hash[:upvotes] *= 40
-	: hash[:categories].include?("cats") && hash[:categories].include("food") ? hash[:upvotes] *= 15
-	: hash[:categories].include?("bacon") && hash[:categories].include("food") ? hash[:upvotes] *= 24
-	: hash[:categories].include?("cats") ? hash[:upvotes] *= 5
+	hash[:categories].include?("cats") ? hash[:upvotes] *= 5
 	: hash[:categories].include?("bacon") ? hash[:upvotes] *= 8
 	: hash[:categories].include?("food") ? hash[:upvotes] *= 3
 	: hash[:upvotes]
+
+# The commented out code below would handle instances where where multiple categories would be included (ie. a single story with "cats," "bacon," and "food" as categories.
+
+	# hash[:categories].include?("cats") && hash[:categories].include("bacon") && hash[:categories].include("food") ? hash[:upvotes] *= 120 
+	# : hash[:categories].include?("cats") && hash[:categories].include("bacon") ? hash[:upvotes] *= 40
+	# : hash[:categories].include?("cats") && hash[:categories].include("food") ? hash[:upvotes] *= 15
+	# : hash[:categories].include?("bacon") && hash[:categories].include("food") ? hash[:upvotes] *= 24
+	# : hash[:categories].include?("cats") ? hash[:upvotes] *= 5
+	# : hash[:categories].include?("bacon") ? hash[:upvotes] *= 8
+	# : hash[:categories].include?("food") ? hash[:upvotes] *= 3
+	# : hash[:upvotes]
 
 	stories<<hash
 end

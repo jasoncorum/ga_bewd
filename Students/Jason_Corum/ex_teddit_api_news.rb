@@ -26,7 +26,7 @@ response['new'].each do |story|
 
 	hash[:upvotes] = story['shares']['total']
 
-	hash[:categories].include?("cat".capitalize) ? hash[:upvotes] *= 5
+	hash[:categories].include?("cats".capitalize) ? hash[:upvotes] *= 5
 	: hash[:categories].include?("bacon".capitalize) ? hash[:upvotes] *= 8
 	: hash[:categories].include?("food".capitalize) ? hash[:upvotes] *= 3
 	: hash[:upvotes]

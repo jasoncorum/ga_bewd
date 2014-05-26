@@ -49,6 +49,9 @@ What are some pros and cons of using hashes?
 <img id ='icon' src="../../assets/ICL_icons/Code_along_icon_md.png">
 ##Creating Objects
 
+[starter code](/classes/05_Classes_Objects/starter_code/code_demo_creating_objects.rb)
+
+
 
 ---
 

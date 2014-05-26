@@ -50,7 +50,8 @@ What are some pros and cons of using hashes?
 ##Creating Objects
 
 [starter code](/classes/05_Classes_Objects/starter_code/code_demo_creating_objects.rb)
-[solutions]()
+
+[solutions](https://github.com/ga-students/BEWD_DC_1/tree/master/classes/05_Classes_Objects/solutions)
 
 
 

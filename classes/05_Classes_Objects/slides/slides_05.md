@@ -190,6 +190,8 @@ What are some pros and cons of using hashes?
 
 *	Midterm due lesson 8.
 
+[requirements and grading](https://github.com/ga-students/BEWD_DC_1/blob/master/Homework/Ruby/Ruby_Midterm/midterm.md)
+
 ---
 
 

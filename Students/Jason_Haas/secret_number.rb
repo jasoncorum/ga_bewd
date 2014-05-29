@@ -36,6 +36,8 @@
 #
 ###############################################################################
 
+# Better and newer version of this file is in the BEWD-HW repo!
+
 secret_number = rand(1..10)	# Made it a random number rather than fixed
 
 def intro

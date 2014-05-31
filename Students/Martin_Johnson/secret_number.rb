@@ -36,52 +36,52 @@
 #
 ###############################################################################
 
-# Better and newer version of this file is in the BEWD-HW repo!
-
-secret_number = rand(1..10)	# Made it a random number rather than fixed
-
-def intro
-	puts "Welcome to the Secret Number game!!  Created by Jason Haas."
+ 
+def start # starts the game
+	puts "Welcome to the Secret Number Game,"
+	puts "It's the game all the cool kids are playing!!!"
 	puts "What is your name?"
-	player_name = gets.chomp
-	puts "Hi #{player_name}!!"
-	puts "For this game you must guess a number between 1 and 10.  You have 3 tries to guess correctly."
-	# player_name		# return the player_name
+	player_name = gets.chomp # solicits player name
+	puts
+	puts "Hi #{player_name}!"
+	puts
+	puts "You must guess a number between 1 and 10,"
+	puts "and you only get 3 tries to do so."
+	puts "Good Luck!!!"
+	puts
 end
 
-def guess(secret_number)
-	3.downto(1) do |try|
-		puts "Guess a number between 1 and 10:"
-		if try == 1
-			puts "You have #{try} guess left."
+def guess number
+	guesses = 1
+	while guesses <= 3
+		puts "Please guess a number:"
+		answer = gets.chomp.to_i # solcits guess
+		if answer == number # if answer is correct
+		  	puts 
+		  	puts "Congratulations, you are Correct!!!"
+		  	guesses = 10
 		else
-			puts "You have #{try} guesses left."
+			if answer < number #tests if is low wrong answer
+			puts "Your guess is too low"
+			else # if wrong high number
+			puts "Your guess is too high"
+			end
+		guesses += 1
+		puts "You have #{4 - guesses} left before the game is over. Please enter a another number"
 		end
-		
-		# Add check in here to see if its a number
-		number = gets.chomp.to_i
-		until number > 0 && number < 11 do
-			puts "You didn't enter a number between 1 and 10."
-			number = gets.chomp.to_i
-		end
-		check_number(number, secret_number)
 	end
-	puts "You didn't guess the right number!  You suck at life!"
-	puts "The correct number was #{secret_number}"
-end
-
-def check_number(number, secret_number)
-	result = number <=> secret_number	# returns 0 if true, -1 if a < b, and +1 if a > b
-	if result == 0
-		puts "You guessed the number!  You're amazing!"
-		abort
-	elsif result == -1
-		puts "Your number is too low!"
-	else result == 1
-		puts "Your number is too high!"
+	if guesses != 10 #message if lost
+		puts
+		puts "You have lost and the game is over."
+		puts "The secret number was #{number}."
 	end
-end
+end	
 
-# Main program
-intro()
-guess(secret_number)
+secret_number = 7 #hard codes secret number
+start
+guess secret_number
+
+
+puts
+puts "Please tell all of your cool friends to play the Secret Number Game!!! :-)" # Mastermind marketing ploy
+puts

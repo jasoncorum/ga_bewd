@@ -49,6 +49,11 @@ What are some pros and cons of using hashes?
 <img id ='icon' src="../../assets/ICL_icons/Code_along_icon_md.png">
 ##Creating Objects
 
+[starter code](/classes/05_Classes_Objects/starter_code/code_demo_creating_objects.rb)
+
+[solutions](https://github.com/ga-students/BEWD_DC_1/tree/master/classes/05_Classes_Objects/solutions)
+
+
 
 ---
 
@@ -184,6 +189,8 @@ What are some pros and cons of using hashes?
 ## Homework
 
 *	Midterm due lesson 8.
+
+[requirements and grading](https://github.com/ga-students/BEWD_DC_1/blob/master/Homework/Ruby/Ruby_Midterm/midterm.md)
 
 ---
 

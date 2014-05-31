@@ -47,7 +47,20 @@ def num_count(num)
 	end
 end
 
+<<<<<<< HEAD
 # The lines below are the introduction to the game.
+=======
+def secret_number(number)
+  	response = ''
+  	response += 'Less' if number < 1
+  	response += 'Equal' if number == 3
+  	response += 'More' if number > 3
+  	return response if !response.empty?
+  	number
+end
+
+# These lines below are the introduction to the game.
+>>>>>>> upstream/master
 
 puts "Welcome to the Secret Number Game! I am your host, Macbook."
 puts "This game was created by my owner, Jason."
@@ -59,6 +72,7 @@ puts "In the Secret Number Game, you guess a number between 1 and 10 and, if you
 # The game loop is below. It gives the player 3 guesses to guess the secret number and provides different responses for when the guess is higher or lower than the secret number. It also provides a unique response if the user guesses the secret number. 
 
 3.downto(1) do |num|
+<<<<<<< HEAD
     puts "You have #{num_count(num)} before the game is over."
     puts "What is your guess?"
     number = gets.strip.to_i
@@ -69,6 +83,15 @@ puts "In the Secret Number Game, you guess a number between 1 and 10 and, if you
     puts "You're out of guesses, so you lost the Secret Number Game. Bye." if num == 1
 end
 
+=======
+	puts "You have #{num_count(num)} before the game is over."
+  	puts "What is your guess, #{player}?"
+  	number = gets.strip.to_i
+	puts secret_number
+end
+
+
+>>>>>>> upstream/master
 # assert secret_number(1)
 # assert secret_number(2)
 # assert secret_number(3)

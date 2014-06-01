@@ -13,10 +13,12 @@ class Game
 		@guess = guess
 	end
 
+# The method below creates the scret number by pulling a random number from an array of the numbers 1 through 10.
 	def create_secret_number
 		@sn = SecretNumber.new.secret_number_sample
 	end
 
+# The method below substitutes "guess" for "guesses" when the player reaches their last guess.
 	def num_count(num)
 		if num == 1
 		"#{num} guess"
@@ -25,17 +27,28 @@ class Game
 		end
 	end
 
+# The method below gets a single guess from the user, strips out space and converts to integer.
 	def get_number
 		puts "What is your guess?"
     	@guess = gets.strip.to_i
 	end
 
+# The method below provides feed back to the player based on the number they enter. 
 	def check
-		puts 'Your number is lower than the secret number' if @guess < @sn
-    	puts 'You guessed the secret number! You win' if @guess == @sn
-    	puts 'Your number is higher than the secret number.' if @guess > @sn
+		if @guess <= 0
+		puts 'Invalid entry. Please guess a number between 1 and 10.'
+		elsif @guess > 10
+		puts 'Invalid entry. Please guess a number between 1 and 10.'
+		elsif @guess < @sn
+		puts 'Your number is lower than the secret number'
+		elsif @guess == @sn
+		puts 'You guessed the secret number! You win!'
+    	else @guess > @sn 
+    	puts 'Your number is higher than the secret number.'
+    	end
     end
 
+# The method below groups all the necessary methods together and limits the player to 3 guesses.
 	def game_loop
 		create_secret_number
 		3.downto(1) do |num|

@@ -55,12 +55,6 @@ def create_building
   Building.new(building_name, building_address)
 end
 
-# def view_all_apts(unit)
-#   building.apartments do |unit|
-#     puts "Apartment: #{building.apartments[:name]}, Bedrooms: #{building.apartments[:apt_bedrooms]}"
-#   end
-# end
-
 # Now call methods to run the program
 
 puts "******************Welcome to Ruby Building Manager****************** \n \n \n"
@@ -95,13 +89,7 @@ response = gets.strip
 
 if response == 'v'
   
-  # building.apartments.each do |unit|
-  # puts "Apartment: #{[:name]}, Bedrooms: #{[:apt_bedrooms]}"
-  # end
-
-  puts building.apartments
-
-  # building.view_apartments
+puts building.apartments
 
 else
   puts "Thanks for using Ruby Building Manager"

@@ -11,14 +11,4 @@ class Apartment
 		@renter = []
 		@rent = []
 	end
-
-	# def self.view_apartments
- #  		puts "Apartment: #{@name}"
- #  		puts "#Square Feet: #{@apt_sqft} Bedooms: #{@apt_bedrooms} Bathrooms: #{@apt_bathrooms}"
- #  		end
-	
-	# def self.view_apartments
-	# 	puts "#{@name} is #{@rent} dollars a month, and is occupied by #{@renter}."
-	# end
-
 end

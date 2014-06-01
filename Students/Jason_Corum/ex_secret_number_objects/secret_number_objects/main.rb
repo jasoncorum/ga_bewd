@@ -52,6 +52,7 @@ puts "This game was created by my owner, Jason."
 
 new_player = Person.new
 new_player.create_player
+new_player.explain_game
 
 # put code here to create a new game, and start it
 

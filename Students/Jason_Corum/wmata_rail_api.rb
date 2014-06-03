@@ -7,7 +7,7 @@ arr_trains = []
 
 # The code below is for accessing http://mashable.com/stories.json
 
-response = JSON.parse(RestClient.get 'http://api.wmata.com/StationPrediction.svc/json/GetPrediction/All?api_key=ejv5bjtebefepg8qf55d2zt3')
+response = JSON.parse(RestClient.get ENV['wmata_access_key_id'])
 
 response['Trains'].each do |train|
 	hash = {}

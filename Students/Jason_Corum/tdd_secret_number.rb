@@ -35,53 +35,64 @@
 # Remember to cast input from the Player into the appropriate data type.
 #
 ###############################################################################
-
-# Better and newer version of this file is in the BEWD-HW repo!
-
-secret_number = rand(1..10)	# Made it a random number rather than fixed
-
-def intro
-	puts "Welcome to the Secret Number game!!  Created by Jason Haas."
-	puts "What is your name?"
-	player_name = gets.chomp
-	puts "Hi #{player_name}!!"
-	puts "For this game you must guess a number between 1 and 10.  You have 3 tries to guess correctly."
-	# player_name		# return the player_name
+def assert(truth)
+  raise "ERROR" if !truth
 end
 
-def guess(secret_number)
-	3.downto(1) do |try|
-		puts "Guess a number between 1 and 10:"
-		if try == 1
-			puts "You have #{try} guess left."
-		else
-			puts "You have #{try} guesses left."
-		end
-		
-		# Add check in here to see if its a number
-		number = gets.chomp.to_i
-		until number > 0 && number < 11 do
-			puts "You didn't enter a number between 1 and 10."
-			number = gets.chomp.to_i
-		end
-		check_number(number, secret_number)
-	end
-	puts "You didn't guess the right number!  You suck at life!"
-	puts "The correct number was #{secret_number}"
-end
-
-def check_number(number, secret_number)
-	result = number <=> secret_number	# returns 0 if true, -1 if a < b, and +1 if a > b
-	if result == 0
-		puts "You guessed the number!  You're amazing!"
-		abort
-	elsif result == -1
-		puts "Your number is too low!"
-	else result == 1
-		puts "Your number is too high!"
+def num_count(num)
+	if num == 1
+		"#{num} guess"
+	else
+		"#{num} guesses"
 	end
 end
 
-# Main program
-intro()
-guess(secret_number)
+<<<<<<< HEAD
+# The lines below are the introduction to the game.
+=======
+def secret_number(number)
+  	response = ''
+  	response += 'Less' if number < 1
+  	response += 'Equal' if number == 3
+  	response += 'More' if number > 3
+  	return response if !response.empty?
+  	number
+end
+
+# These lines below are the introduction to the game.
+>>>>>>> upstream/master
+
+puts "Welcome to the Secret Number Game! I am your host, Macbook."
+puts "This game was created by my owner, Jason."
+puts "What is your name?"
+player = gets.strip
+puts "Hi #{player}!"
+puts "In the Secret Number Game, you guess a number between 1 and 10 and, if you pick the right number, you win!"
+
+# The game loop is below. It gives the player 3 guesses to guess the secret number and provides different responses for when the guess is higher or lower than the secret number. It also provides a unique response if the user guesses the secret number. 
+
+3.downto(1) do |num|
+<<<<<<< HEAD
+    puts "You have #{num_count(num)} before the game is over."
+    puts "What is your guess?"
+    number = gets.strip.to_i
+    puts 'Your number is lower than the secret number' if number < 3
+    puts 'You guessed the secret number! You win' if number == 3
+    puts 'Your number is higher than the secret number.' if number > 3  
+    break if number == 3
+    puts "You're out of guesses, so you lost the Secret Number Game. Bye." if num == 1
+end
+
+=======
+	puts "You have #{num_count(num)} before the game is over."
+  	puts "What is your guess, #{player}?"
+  	number = gets.strip.to_i
+	puts secret_number
+end
+
+
+>>>>>>> upstream/master
+# assert secret_number(1)
+# assert secret_number(2)
+# assert secret_number(3)
+# assert secret_number(4)

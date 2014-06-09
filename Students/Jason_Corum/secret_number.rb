@@ -68,7 +68,7 @@ puts "In the Secret Number Game, you guess a number between 1 and 10 and, if you
     puts 'You guessed the secret number! You win' if number == secret_number
     puts 'Your number is higher than the secret number.' if number > secret_number  
     break if number == secret_number
-    puts "You're out of guesses, so you lost the Secret Number Game. Bye." if num == 1
+    puts "You're out of guesses, so you lost the Secret Number Game. The secret number was #{secret_number}. Bye." if num == 1
 end
 
 # assert secret_number(1)

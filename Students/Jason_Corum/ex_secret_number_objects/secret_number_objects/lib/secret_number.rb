@@ -9,6 +9,7 @@ class SecretNumber
 	end
 
 #The method below selects a random number from the @secret_number variable.
+	# good! You could instead return the sample from the SecretNumber initializer.
 	def secret_number_sample
 		@secret_number.sample
 	end

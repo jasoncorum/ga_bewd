@@ -15,7 +15,7 @@ class Game
 
 # The method below creates the scret number by pulling a random number from an array of the numbers 1 through 10.
 	def create_secret_number
-		@sn = SecretNumber.new.secret_number_sample
+		@sn = SecretNumber.new.secret_number_sample # good
 	end
 
 # The method below substitutes "guess" for "guesses" when the player reaches their last guess.
@@ -52,6 +52,8 @@ class Game
 	def game_loop
 		create_secret_number
 		3.downto(1) do |num|
+		# this is good. If you wanted to give the user the option to play
+		# again once the game has ended, do you know how might do that?
 		puts "You have #{num_count(num)} before the game is over."
 		get_number
 		check

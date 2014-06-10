@@ -21,6 +21,7 @@ class Person
 	end
 
 # The methid below ends the game.
+	# this is a nice touch! :)
 	def end_game
 		puts "Thank you for playing the Secret Number Game, #{@player}."
 	end

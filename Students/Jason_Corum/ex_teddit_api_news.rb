@@ -33,6 +33,7 @@ response['data']['children'].each do |story|
 	: hash[:upvotes]
 
 	# The commented out code below would handle instances where where multiple categories would be included (ie. a single story with "cats," "bacon," and "food" as categories.
+	# Does this work? Why is it commented out?
 
 	# hash[:categories].include?("cats") && hash[:categories].include("bacon") && hash[:categories].include("food") ? hash[:upvotes] *= 120 
 	# : hash[:categories].include?("cats") && hash[:categories].include("bacon") ? hash[:upvotes] *= 40
@@ -49,6 +50,10 @@ end
 stories.each do |story|
 	puts "Story: #{story[:title]}, Category: #{story[:categories]}, Upvotes: #{story[:upvotes]}"
 end
+
+# The above looks good! But what about the mashable and digg data?
+# This will be a good exercise in writing reusable, DRY code.
+# You should definitely try to finish this. Let me know if you have questions!
 
 ###########################################################################
 

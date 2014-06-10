@@ -1,0 +1,36 @@
+<% if @gesture == @opponent %>
+	<p>You both chose the same gesture. It's a tie.</p>
+	<p>That's boring.</p>
+	<p><%= link_to "Play again?", new_rock_paper_scissor_path %></p>
+<% elsif @gesture == 1 && @opponent == 2 %>
+	<p>Your opponent chose "Paper."</p>
+	<p>You lose!</p>
+	<p><%= link_to "Play again?", new_rock_paper_scissor_path %></p>
+	<%= image_tag "games/loser.gif" %>
+<% elsif @gesture == 1 && @opponent == 3 %>
+	<p>Your opponent chose "Scissors."</p>
+	<p>You win!</p>
+	<p><%= link_to "Play again?", new_rock_paper_scissor_path %></p>
+	<%= image_tag "games/winner.gif" %>
+<% elsif @gesture == 2 && @opponent == 1 %>
+	<p>Your opponent chose "Rock."</p>
+	<p>You win!</p>
+	<p><%= link_to "Play again?", new_rock_paper_scissor_path %></p>
+	<%= image_tag "games/winner.gif" %>
+<% elsif @gesture == 2 && @opponent == 3 %>
+	<p>Your opponent chose "Scissors."</p>
+	<p>You lose!</p>
+	<p><%= link_to "Play again?", new_rock_paper_scissor_path %></p>
+	<%= image_tag "games/loser.gif" %>
+<% elsif @gesture == 3 && @opponent == 1 %>
+	<p>Your opponent chose "Rock."</p>
+	<p>You lose!</p>
+	<p><%= link_to "Play again?", new_rock_paper_scissor_path %></p>
+	<%= image_tag "games/loser.gif" %>
+<% else @gesture == 3 && @opponent == 2 %>
+	<p>Your opponent chose "Paper."</p>
+	<p>You win!</p>
+	<p><%= link_to "Play again?", new_rock_paper_scissor_path %></p>
+	<%= image_tag "games/winner.gif" %>
+<% end %>
+

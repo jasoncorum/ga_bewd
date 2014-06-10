@@ -1,0 +1,5 @@
+<h1>Pick a Number</h1>
+
+<% 1.upto(5) do |number| %>
+<%= link_to image_tag("secret_numbers/#{number}.jpeg"), secret_number_path(number) %>
+<% end %>

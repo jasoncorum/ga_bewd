@@ -1,0 +1,5 @@
+<h1>Please Pick Rock, Paper or Scissors</h1>
+
+<% 1.upto(3) do |number| %>
+<%= link_to image_tag("rock_paper_scissors/#{number}.jpeg"), rock_paper_scissor_path(number) %>
+<% end %>

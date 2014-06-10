@@ -8,7 +8,7 @@ class Apartment
 		@apt_sqft = apt_sqft
 		@apt_bedrooms = apt_bedrooms
 		@apt_bathrooms = apt_bathrooms
-		@renter = []
-		@rent = []
+		@renter
+		@rent
 	end
 end

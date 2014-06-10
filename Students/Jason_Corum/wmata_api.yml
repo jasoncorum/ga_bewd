@@ -1,1 +1,4 @@
-wmata_access_key_id: 'http://api.wmata.com/StationPrediction.svc/json/GetPrediction/All?api_key=ejv5bjtebefepg8qf55d2zt3'
+
+# Development API URL with key for WMATA
+
+wmata_access_url: "http://api.wmata.com/StationPrediction.svc/json/GetPrediction/All?api_key=kfgpmgvfgacx98de9q3xazww"

@@ -1,5 +1,7 @@
 require 'rest_client'
 require 'json'
+require 'yaml'
+require 'wmata_api'
 
 arr_trains = []
 
@@ -7,7 +9,7 @@ arr_trains = []
 
 # The code below is for accessing http://mashable.com/stories.json
 
-response = JSON.parse(RestClient.get ENV['wmata_access_key_id'])
+response = JSON.parse(RestClient.get wmata_access_url)
 
 response['Trains'].each do |train|
 	hash = {}

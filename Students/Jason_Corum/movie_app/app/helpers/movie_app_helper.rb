@@ -1,0 +1,2 @@
+module MovieAppHelper
+end

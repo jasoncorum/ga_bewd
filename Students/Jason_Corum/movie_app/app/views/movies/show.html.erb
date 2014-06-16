@@ -1,0 +1,6 @@
+<p><strong><%= @movie.title %></strong></p> 
+
+<p><%= @movie.description %>, <em>released <%= @movie.year_released %></em><br />
+<sub><%= link_to "Movie List", root_path %> | <%= link_to "Edit Movie", edit_movie_path %> | <%= link_to "Delete Movie", movie_path,
+                    method: :delete, data: { confirm: 'Are you sure you want to delete this movie?' }  %></sub>
+</p>

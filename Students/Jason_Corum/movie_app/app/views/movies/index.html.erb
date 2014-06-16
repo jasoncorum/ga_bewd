@@ -1,0 +1,21 @@
+<h2><%= link_to "Welcome to RetFlix!", root_path %></h2>
+<p>See our collection of movies below.</p>
+
+<%= render partial: "search_movie" %>
+
+<p><%= link_to "Add Movie", new_movie_path %></p>
+
+<hr />
+
+
+<% @my_movies.each do |movie| %>
+
+<p><strong><%= movie.title %></strong></p> 
+
+<p><%= movie.description %>, <em>released <%= movie.year_released %></em><br />
+<sub><%= link_to "View Movie", movie_path(movie) %> | <%= link_to "Edit Movie", edit_movie_path(movie) %> | <%= link_to "Delete Movie", movie_path(movie),
+                    method: :delete, data: { confirm: 'Are you sure you want to delete this movie?' }  %></sub>
+</p>
+<hr />
+
+<% end %>

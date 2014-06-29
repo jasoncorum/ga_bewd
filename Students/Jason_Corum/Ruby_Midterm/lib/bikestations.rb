@@ -72,6 +72,10 @@ class BikeStations
 		end
 	end
 
+	# The above methods look good! but there is a lot of repeated code.
+	# Do you know how to refactor the above methods to use a single method
+	# with arguments?
+
 	def show_stations
 		if @select_city == "sf"
 			@sf_stations.each do |x|
